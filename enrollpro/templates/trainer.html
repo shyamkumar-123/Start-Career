@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Trainers</title>
+  <link rel="icon" type="image/x-icon" href="media/images/logo1.webp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+        <h1 class='text-center text-primary'>Trainers information</h1><br>
+    <div class="container" >
+        <div class="row ">
+            <div class="col-md-11">
+                    <table class="table table-bordered text-center">
+            <thead>
+        <tr>
+            <th class="text-danger">Trainer Name:</th>
+            <th class="text-danger">Teaching/knowing languages:</th>
+            <th class="text-danger">Experience:</th>
+            
+
+        </tr>
+        {% for x in trainer %}
+        <tr>
+            <td>{{x.name}}</td>
+            <td>{{x.languages}}</td>
+            <td>{{x.Experience}} years</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</h3>
+</body>
+</html>

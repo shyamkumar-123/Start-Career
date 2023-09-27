@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Success</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=client-id=AQcG5npz7pdpR-9BIG2FXAKsX3nCzTcEtymMqcOq3u1Nhgsxn54ISn46qljQYu3aE2FGfrafrgSjtOdF&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+
+
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    <div class="container" style="margin-top: 50px;">
+
+        <center><i class="fas fa-check-circle" style="font-size: 72px;margin-bottom: 20px;color: #28A745;"></i></center>
+    
+        <h2 class="text-center">Payment Successful</h2>
+    
+        <br>
+        </div>
+    
+    </div>
+    {% endblock %}
+</body>
+</html>

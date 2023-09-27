@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Homepage</title>
+  <link rel="icon" type="image/x-icon" href="media/images/logo1.webp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=client-id=AQcG5npz7pdpR-9BIG2FXAKsX3nCzTcEtymMqcOq3u1Nhgsxn54ISn46qljQYu3aE2FGfrafrgSjtOdF&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+
+
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+  
+  <br>
+    <h1 class="text-center text-primary">Hello  welcome to the Start Career</h1>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1  class="text-center text-dark">Select your Course</h1>
+          <br>
+            {% for x in qset %}
+             <div class="col-lg-4">
+               <div class="card">
+                 <div class="card-body">
+                  <a href=="{{x.id}}"></a> 
+                   <div class="category-image">
+                    <img src="{{x.image.url}}" alt="category image" style="height:100%;width:100%;" class="img-thumbnail"/>
+                   </div>
+                   <h4><b> <p class="text-center text-primary">{{x.Course_name}}</p></b></h4><br>
+                    <p class="text-center"><b>Duration:</b>{{x.duration}} Months</p><br>
+                    <p class="text-center"><b>Learning_hours:</b>{{x.Hours}} + hours</p><br>
+                    <p class="text-center"><b>Fee:${{x.Fee}}.00</b></p><br><br>
+                    <p class="text-center"><a href="{% url 'details' x.id %}" class="btn btn-success;"  style="height:50%;width:50%; background-color:#90EE90;">Learn More</a></p>
+                      <br><br>
+                  </div>
+                </div>
+               </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+   <div class="text-center">
+    <h2>Filter by Price</h2>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray;width:230px">
+    <p ><a href="/filprice/1">Above $3000</a></p>
+    <p><a href="/filprice/2">Below $2000</a></p>
+  </div>
+ {% endblock %}
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <footer>
+    <div class="container">
+      <div id="about" style="background-color:black; color:white;">
+        <h2 class="text-center" >About us</h2>
+        <p class="text-center">Start Career website started in the year of 2023. It is a best platform to start IT career who wants to start their career in IT industry. </p>
+        <p class="text-center">And they can easily learned with the industry experts.</p>
+        <p class="text-center">We are offering placements to who are successfully completed their course without any failures.</p>
+        <p >And the teaching languages are or courses like @python, @Mysql ,@Html5,css3,@Data science,@Data analytics,@Machine learning ect</p>
+        <h2 class="text-center">Contact</h2>
+        <p class="text-center">You can contact this numbers if you have face any difficulties regarding course.</p>
+        <p class="text-center">Shyam:7869548379</p>
+        <p class="text-center">Kumar:8671309745</p>
+      </div><br>
+      <div class="text-center p-4" style="background-color:white;">
+        
+         © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://startcareer.com/">Start Career.com</a>
+      </div><br>
+    </div>
+  </footer>
+
+</body>   
+</html>

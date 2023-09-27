@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Filters page</title>
+  <link rel="icon" type="image/x-icon" href="media/images/logo1.webp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{%  static 'style.css'  %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-12">
+          <b><h1  class="text-center text-warning">Filter By Price </h1></b>
+          <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+          {% for x in data %}
+         
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <a href=="{{x.id}}"></a>
+                  <div class="category-image">
+                  <img src="{{x.image.url}}" alt="category image" style="height:100%;width:100%;" class="img-thumbnail"/>
+                  </div>
+                   <h4><b> <p class="text-center text-primary">{{x.Course_name}}</p></b></h4><br>
+                    <p class="text-center"><b>Duration:</b>{{x.duration}} Months</p><br>
+                    <p class="text-center"><b>Learning_hours:</b>{{x.Hours}} + hours</p><br>
+                    <p class="text-center"><b>Fee:Rs.{{x.Fee}} +GST</b></p><br><br>
+                    <p class="text-center"><a href="{% url 'details' x.id %}" class="btn btn-success;"  style="height:50%;width:50%; background-color:#90EE90;">Learn More</a>
+                      <br><br>
+                    <!--<hr style="height:2px;border-width:0;color:gray;background-color:gray">-->  
+                </div>
+              </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+  
+   {% endblock %}
+  </body>   
+</html>
